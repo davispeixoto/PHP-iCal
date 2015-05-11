@@ -2,12 +2,12 @@
 
 A PHP implementation of RFC 5545 and RFC 5546.
 
-[![Latest Stable Version](https://img.shields.io/packagist/v/open-web-apps/to-done.svg)](https://packagist.org/packages/open-web-apps/to-done-core)
-[![Total Downloads](https://img.shields.io/packagist/dt/open-web-apps/to-done.svg)](https://packagist.org/packages/open-web-apps/to-done-core)
-[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/open-web-apps/ToDone-Core/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/open-web-apps/ToDone-Core/?branch=master)
-[![Codacy Badge](https://www.codacy.com/project/badge/68379f5f51fe4511b2ff8c4df96431be)](https://www.codacy.com/app/davis-peixoto/ToDone-Core)
-[![Code Climate](https://codeclimate.com/github/open-web-apps/ToDone-Core/badges/gpa.svg)](https://codeclimate.com/github/open-web-apps/ToDone-Core)
-[![SensioLabsInsight](https://insight.sensiolabs.com/projects/7e4aab0b-d011-4dfb-a199-36e34916b6fd/small.png)](https://insight.sensiolabs.com/projects/7e4aab0b-d011-4dfb-a199-36e34916b6fd)
+[![Latest Stable Version](https://img.shields.io/packagist/v/davispeixoto/calendar.svg)](https://packagist.org/packages/davispeixoto/calendar)
+[![Total Downloads](https://img.shields.io/packagist/dt/davispeixoto/calendar.svg)](https://packagist.org/packages/davispeixoto/calendar)
+[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/davispeixoto/PHP-iCal/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/davispeixoto/PHP-iCal/?branch=master)
+[![Codacy Badge](https://www.codacy.com/project/badge/7f809a8ef1044ed283be4fa2583a45fc)](https://www.codacy.com/app/davis-peixoto/PHP-iCal)
+[![Code Climate](https://codeclimate.com/github/davispeixoto/PHP-iCal/badges/gpa.svg)](https://codeclimate.com/github/davispeixoto/PHP-iCal)
+[![SensioLabsInsight](https://insight.sensiolabs.com/projects/581b1e12-b229-44ea-99df-75cf1f9f9dcd/small.png)](https://insight.sensiolabs.com/projects/581b1e12-b229-44ea-99df-75cf1f9f9dcd)
 
 ## Installation
 
