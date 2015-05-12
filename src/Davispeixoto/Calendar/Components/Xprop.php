@@ -16,14 +16,14 @@ use Davispeixoto\Calendar\Exceptions\CalendarException;
 
 class Xprop
 {
-    const XCOMPSTART = 'X-';
+    const XCOMPSTART = 'X';
     private $param;
     private $value;
 
     public function __construct($param, $value)
     {
         if (!$this->validateParam($param)) {
-            throw new CalendarException("X-Properties must start their names with 'X-'");
+            throw new CalendarException("X-Properties must start their names with 'X-', followed by vendor id with a minimum of 3 characters, then the property name");
         }
 
         $this->param = $param;
@@ -32,7 +32,21 @@ class Xprop
 
     private function validateParam($param)
     {
-        if (strpos($param, self::XCOMPSTART) !== 0) {
+        $arr = explode('-', $param);
+
+        if (sizeof($arr) < 3) {
+            return false;
+        }
+
+        if ($arr[0] != self::XCOMPSTART) {
+            return false;
+        }
+
+        if (strlen($arr[1]) < 3) {
+            return false;
+        }
+
+        if (strlen($arr[2]) < 1) {
             return false;
         }
 
@@ -41,7 +55,6 @@ class Xprop
 
     public function __toString()
     {
-        //
-        return 'a';
+        return $this->param . ':' . $this->value . Calendar::EOL;
     }
 }
