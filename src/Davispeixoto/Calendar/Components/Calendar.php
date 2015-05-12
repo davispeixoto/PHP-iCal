@@ -11,73 +11,66 @@
  * Time: 7:06 PM
  * Powered By PhpStorm
  */
+
 class Calendar
 {
-    public $dtstamp;
-    public $uid;
-    public $dtstart;
-    public $dtend;
-    public $durantion;
-    public $class;
-    public $rrule;
+    const EOL = "\r\n";
+    const DELIMITER = 'VCALENDAR';
+    const PRODID = '-//DAVISPEIXOTO/PHPiCal';
+    const VERSION = '2.0';
 
-    public $attach;
-    public $attendee;
-    public $categories;
-    public $comment;
-    public $contact;
-    public $exdate;
-    public $rstatus;
-    public $related;
-    public $resources;
-    public $rdate;
-    public $x_prop;
-    public $iana_prop;
+    public $calscale;
+    public $method;
+
+    /**
+     * @var array An array of Calendar Components (see ComponentInterface implementations)
+     */
+    public $components;
+
+    /**
+     * @var Xprop
+     */
+    public $xProp;
+
+    /**
+     * @var Iana
+     */
+    public $ianaProp;
+
+    public function __construct()
+    {
+
+    }
+
+    public function __toString()
+    {
+        $output = array();
+        $output[] = "BEGIN:{$this->delimiter}";
+        $output[] = "VERSION:{$this->version}";
+
+        if (!empty($this->calscale)) {
+            $output[] = "CALSCALE:{$this->version}";
+        }
+
+        if (!empty($this->method)) {
+            $output[] = "METHOD:{$this->version}";
+        }
+
+        if (!empty($this->xProp)) {
+            $output[] = "VERSION:{$this->xProp}";
+        }
+
+        if (!empty($this->ianaProp)) {
+            $output[] = "IANA:{$this->ianaProp}";
+        }
+
+        foreach ($this->components as $component) {
+            $output[] = $component->__toString();
+        }
+
+        $output[] = "PRODID:{$this->prodId}";
+        return implode(self::EOL, $output);
+    }
 
 
-    /*
-}
-*(
-;
-; The following are REQUIRED,
-; but MUST NOT occur more than once.
-;
-dtstamp / uid /
-;
-; The following is REQUIRED if the component
-; appears in an iCalendar object that doesn't
-                  ; specify the "METHOD" property; otherwise, it
-                  ; is OPTIONAL; in any case, it MUST NOT occur
-                  ; more than once.
-                  ;
-                  dtstart /
-                  ;
-                  ; The following are OPTIONAL,
-                  ; but MUST NOT occur more than once.
-                  ;
-                  class / created / description / geo /
-                  last-mod / location / organizer / priority /
-                  seq / status / summary / transp /
-                  url / recurid /
-                  ;
-                  ; The following is OPTIONAL,
-                  ; but SHOULD NOT occur more than once.
-                  ;
-                  rrule /
-                  ;
-                  ; Either 'dtend' or 'duration' MAY appear in
-                  ; a 'eventprop', but 'dtend' and 'duration'
-                  ; MUST NOT occur in the same 'eventprop'.
-                  ;
-                  dtend / duration /
-                  ;
-                  ; The following are OPTIONAL,
-                  ; and MAY occur more than once.
-                  ;
-                  attach / attendee / categories / comment /
-                  contact / exdate / rstatus / related /
-                  resources / rdate / x-prop / iana-prop
-                  ;
-                  )
-    */
 }
