@@ -50,4 +50,11 @@ class Event implements ComponentInterface
     public $rdate;
     public $xProp;
     public $ianaProp;
+
+    public function __construct()
+    {
+        // implement here
+    }
+
+
 }

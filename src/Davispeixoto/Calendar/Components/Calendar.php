@@ -45,15 +45,15 @@ class Calendar
     public function __toString()
     {
         $output = array();
-        $output[] = "BEGIN:{$this->delimiter}";
-        $output[] = "VERSION:{$this->version}";
+        $output[] = "BEGIN:".self::DELIMITER;
+        $output[] = "VERSION:". self::VERSION;
 
         if (!empty($this->calscale)) {
-            $output[] = "CALSCALE:{$this->version}";
+            $output[] = "CALSCALE:{$this->calscale}";
         }
 
         if (!empty($this->method)) {
-            $output[] = "METHOD:{$this->version}";
+            $output[] = "METHOD:{$this->method}";
         }
 
         if (!empty($this->xProp)) {
@@ -68,7 +68,7 @@ class Calendar
             $output[] = $component->__toString();
         }
 
-        $output[] = "PRODID:{$this->prodId}";
+        $output[] = "PRODID:" . self::PRODID;
         return implode(self::EOL, $output);
     }
 
