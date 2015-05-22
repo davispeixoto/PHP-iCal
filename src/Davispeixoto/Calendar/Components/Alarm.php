@@ -1,9 +1,9 @@
 <?php namespace Davispeixoto\Calendar\Components;
 
-/**
- * Class Alarm
- * @package Davispeixoto\Calendar\Components
- */
+    /**
+     * Class Alarm
+     * @package Davispeixoto\Calendar\Components
+     */
 
 /**
  * Created by Davis Peixoto <davis.peixoto@gmail.com>.
@@ -13,5 +13,5 @@
  */
 class Alarm
 {
-
+    //asd
 }
